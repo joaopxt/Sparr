@@ -1,7 +1,7 @@
 export default {
   registrarAluno(context, data) {
     const alunoData = {
-      id: 'a3',
+      id: context.rootGetters.userId,
       nome: data.nome,
       sobrenome: data.sobrenome,
       descricao: data.desc,

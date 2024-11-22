@@ -6,7 +6,9 @@
     <base-card>
       <div class="controls">
         <base-button mode="outline">Refresh</base-button>
-        <base-button link to="/registro">Registre-se</base-button>
+        <base-button v-if="!isRegistered" link to="/registro"
+          >Registre-se</base-button
+        >
       </div>
       <ul v-if="lobbyVivo">
         <aluno-item
@@ -65,6 +67,9 @@ export default {
     },
     lobbyVivo() {
       return this.$store.getters['lobby/lobbyVivo'];
+    },
+    isRegistered() {
+      return this.$store.getters['lobby/isRegistered'];
     },
   },
   methods: {

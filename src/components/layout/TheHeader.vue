@@ -4,7 +4,7 @@
       <h1><router-link to="/">Sparr</router-link></h1>
       <ul>
         <li><router-link to="/alunos">Lobby</router-link></li>
-        <li><router-link to="/matches">Matches</router-link></li>
+        <li><router-link to="/matches">Treinos</router-link></li>
       </ul>
     </nav>
   </header>
