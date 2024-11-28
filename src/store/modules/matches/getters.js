@@ -1,8 +1,9 @@
 export default {
-  treinos(state) {
-    return state.treinos;
+  treinos(state, _, _2, rootGetters) {
+    const alunoId = rootGetters.userId;
+    return state.treinos.filter((x) => x.alunoId === alunoId);
   },
-  hasTreinos(state) {
-    return state.treinos && state.treinos.length > 0;
+  hasTreinos(_, getters) {
+    return getters.treinos && getters.treinos.length > 0;
   },
 };
