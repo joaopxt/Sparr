@@ -9,8 +9,10 @@ export default {
       faixa: data.faixa,
     };
 
+    const token = context.rootGetters.token;
+
     const response = await fetch(
-      `https://sparrdevelopment-3f564-default-rtdb.firebaseio.com/alunos/${userId}.json`,
+      `https://sparrdevelopment-3f564-default-rtdb.firebaseio.com/alunos/${userId}.json?auth=${token}`,
       {
         method: 'PUT',
         body: JSON.stringify(alunoData),

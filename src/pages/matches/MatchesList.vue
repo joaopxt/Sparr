@@ -1,10 +1,6 @@
 <template>
   <div>
-    <base-dialog
-      :show="!!error"
-      title="'Occoreu um erro!'"
-      @close="handleError"
-    >
+    <base-dialog :show="!!error" title="Ocorreu um erro!" @close="handleError">
       <p>{{ error }}</p>
     </base-dialog>
     <section>

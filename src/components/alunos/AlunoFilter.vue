@@ -10,6 +10,10 @@
       <label for="azul">Azul</label>
     </span>
     <span class="filter-option">
+      <input type="checkbox" id="roxa" checked @change="setFilter" />
+      <label for="roxa">Roxa</label>
+    </span>
+    <span class="filter-option">
       <input type="checkbox" id="marrom" checked @change="setFilter" />
       <label for="marrom">Marrom</label>
     </span>
@@ -28,6 +32,7 @@ export default {
       filters: {
         branca: true,
         azul: true,
+        roxa: true,
         marrom: true,
         preta: true,
       },

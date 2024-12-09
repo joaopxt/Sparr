@@ -14,7 +14,13 @@
       <base-card>
         <div class="controls">
           <base-button mode="outline" @click="loadAlunos">Refresh</base-button>
-          <base-button v-if="!isRegistered && !isLoading" link to="/registro"
+          <base-button link to="/auth?redirect=registro" v-if="!isLoggedIn"
+            >Conecte-se para se juntar ao lobby</base-button
+          >
+          <base-button
+            v-if="isLoggedIn && !isRegistered && !isLoading"
+            link
+            to="/registro"
             >Registre-se</base-button
           >
         </div>
@@ -54,6 +60,7 @@ export default {
       activeFilters: {
         branca: true,
         azul: true,
+        roxa: true,
         marrom: true,
         preta: true,
       },
@@ -62,6 +69,9 @@ export default {
     };
   },
   computed: {
+    isLoggedIn() {
+      return this.$store.getters.isAuthenticated;
+    },
     filteredAlunos() {
       const alunos = this.$store.getters['lobby/alunos'];
       return alunos.filter((aluno) => {
@@ -69,6 +79,9 @@ export default {
           return true;
         }
         if (this.activeFilters.azul && aluno.faixa === 'azul') {
+          return true;
+        }
+        if (this.activeFilters.roxa && aluno.faixa === 'roxa') {
           return true;
         }
         if (this.activeFilters.marrom && aluno.faixa === 'marrom') {

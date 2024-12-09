@@ -53,6 +53,7 @@
         >
           <option value="branca">Branca</option>
           <option value="azul">Azul</option>
+          <option value="roxa">Roxa</option>
           <option value="marrom">Marrom</option>
           <option value="preta">Preta</option>
         </select>

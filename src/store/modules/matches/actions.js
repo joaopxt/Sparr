@@ -27,8 +27,9 @@ export default {
 
   async fetchTreinos(context) {
     const alunoId = context.rootGetters.userId;
+    const token = context.rootGetters.token;
     const response = await fetch(
-      `https://sparrdevelopment-3f564-default-rtdb.firebaseio.com/treinos/${alunoId}.json`
+      `https://sparrdevelopment-3f564-default-rtdb.firebaseio.com/treinos/${alunoId}.json?auth=${token}`
     );
     const responseData = await response.json();
 

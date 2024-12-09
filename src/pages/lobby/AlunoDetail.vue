@@ -9,21 +9,21 @@
 
     <section>
       <base-card>
-        <header>
-          <h2>Bora treinar?</h2>
-          <base-button link :to="contactLink">Contato</base-button>
-        </header>
-        <router-view></router-view>
-      </base-card>
-    </section>
-
-    <section>
-      <base-card>
         <base-badge
           :type="selectedAluno.faixa"
           :title="selectedAluno.faixa"
         ></base-badge>
         <p>{{ selectedAluno.descricao }}</p>
+      </base-card>
+    </section>
+
+    <section>
+      <base-card>
+        <header>
+          <h2>Bora treinar?</h2>
+          <base-button link :to="contactLink">Contato</base-button>
+        </header>
+        <router-view></router-view>
       </base-card>
     </section>
   </div>

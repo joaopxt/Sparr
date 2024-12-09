@@ -35,6 +35,11 @@ export default {
   color: rgb(14, 30, 255);
 }
 
+.roxa {
+  background-color: rgb(158, 116, 255);
+  color: rgb(117, 1, 163);
+}
+
 .marrom {
   background-color: #8d723f;
   color: rgb(252, 143, 1);
